@@ -14,14 +14,25 @@ int main() {
     one.addTopic("equations");
     one.addTopic("operations");
     one.addTopic("functions");
+    two.addTopic("1_century");
+    two.addTopic("2_century");
+    two.addTopic("3_century");
 
     a.enroll(&one);
     a.enroll(&two);
     a.enroll(&two); // попытка добавить повторно
 
     std::cout << "Course: " + one.getName() << "\n";
-    std::cout << "Professor: " + one.getProfessor()->getName() << "\n\n";
+    std::cout << "Professor: " + one.getProfessor()->getName() << "\n";
+    std::cout << "Topics:\n";
     for (const auto& topic : one.getTopics()) {
+        std::cout << topic << "\n";
+    }
+
+    std::cout << "\nCourse: " + two.getName() << "\n";
+    std::cout << "Professor: " + two.getProfessor()->getName() << "\n";
+    std::cout << "Topics:\n";
+    for (const auto& topic : two.getTopics()) {
         std::cout << topic << "\n";
     }
 
